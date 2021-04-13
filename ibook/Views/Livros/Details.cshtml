@@ -1,0 +1,58 @@
+﻿@model ibook.Models.Livros
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Livros</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.quantPag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.quantPag)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.datalancamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.datalancamento)
+        </dd>
+    </dl>
+</div>
+<a class="btn btn-primary btn-icon-split" asp-action="Edit" asp-route-id="@Model.Id">
+    <span class="icon text-white">
+        <i class="fas fa-pencil-alt"></i>
+    </span>
+    <span class="text text-white">Editar</span>
+</a>
+
+<a class="btn btn-primary btn-icon-split" asp-action="Index">
+    <span class="icon text-white">
+        <i class="fas fa-arrow-circle-left"></i>
+    </span>
+    <span class="text text-white">Voltar</span>
+</a>

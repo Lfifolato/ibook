@@ -1,0 +1,61 @@
+﻿@model ibook.Models.Livros
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Escritores</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="titulo" class="control-label"></label>
+                <input asp-for="titulo" class="form-control" />
+                <span asp-validation-for="titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="descricao" class="control-label"></label>
+                <input asp-for="descricao" class="form-control" />
+                <span asp-validation-for="descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genero" class="control-label"></label>
+                <input asp-for="Genero" class="form-control" />
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="quantPag" class="control-label"></label>
+                <input asp-for="quantPag" class="form-control" />
+                <span asp-validation-for="quantPag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datalancamento" class="control-label"></label>
+                <input asp-for="datalancamento" class="form-control" />
+                <span asp-validation-for="datalancamento" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white">
+                    <i class="far fa-save"></i>
+                </span>
+                <span class="text">Salvar</span>
+            </button>
+            <a class="btn btn-primary btn-icon-split" asp-action="Index">
+                <span class="icon text-white">
+                    <i class="fas fa-arrow-circle-left"></i>
+                </span>
+            </a>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
